@@ -27,14 +27,34 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* key matrix size */
 // Rows are doubled-up
 #define MATRIX_ROWS 12
-#define MATRIX_COLS 7
+#define MATRIX_COLS 6
 
 // wiring of each half
-#define MATRIX_ROW_PINS { D4, C6, D7, E6, B4, B5 }
-#define MATRIX_COL_PINS { F5, F6, F7, B1, B3, B2, B6 }
+#define MATRIX_ROW_PINS { D0, D4, C6, D7, E6, B4 /* , B5*/ }
+#define MATRIX_COL_PINS { F5, F6, F7, B1, B3, B2 /*, B6 */ }
 
 #define DIODE_DIRECTION COL2ROW
 
 // WS2812 RGB LED strip input and number of LEDs
-#define RGB_DI_PIN D3
-#define RGBLED_NUM 12
+
+#define RGB_DI_PIN F4
+#define RGBLED_NUM 34 /* That's for one side */
+
+// #define RGB_DI_PIN D3
+// ##define RGBLED_NUM 12
+
+#define RGBLIGHT_SPLIT
+#define RGBLIGHT_LAYERS
+#define RGBLIGHT_SLEEP
+//#define RGBLIGHT_DEFAULT_VAL 0 does nothing
+
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_layers.md#switching-and-toggling-layers-idswitching-and-toggling-layers
+#define TAPPING_TOGGLE 2
+#define TAPPING_TERM 175
+
+#define RGBLIGHT_EFFECT_SNAKE
+#define RGBLIGHT_EFFECT_KNIGHT
+//#define RGBLIGHT_EFFECT_BREATHING
+//#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+
+#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_KNIGHT
